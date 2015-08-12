@@ -9,11 +9,11 @@ snort2pcap
 Call write_pcap with the following arguments:
 
 *required*
-* packets; see data structure below
-* fpath; file path, must not already exist
+- packets; see data structure below
+- fpath; file path, must not already exist
 *optional*
-* snaplen=123; max length of captured packets, in octets (see libpcap file format)
-* linktype=1; since dummy MACs have been hard coded, probably best to leave this alone
+- snaplen=123; max length of captured packets, in octets (see libpcap file format)
+- linktype=1; since dummy MACs have been hard coded, probably best to leave this alone
 
 
 | ``list = [packet_1, packet_2, ... packet_n]``
