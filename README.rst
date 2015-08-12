@@ -19,13 +19,13 @@ Call write_pcap with the following arguments:
 | ``packet_n = (snort_packet_descriptor, packet_data)``
 
 | ``snort_packet_descriptor = {``
-| ``\    "sensor_id": 123,               # number``
-| ``\    "event_id": 234,                # number``
-| ``\    "packet_second": 345,           # number``
-| ``\    "packet_microsecond": 456,      # number``
-| ``\    "linktype": 7,                  # number``
-| ``\    "packet_length": 890,           # number``
-| ``\    "packet_data": "AAAAb=="        # base64 string``
+| ``"sensor_id": 123,               # number``
+| ``"event_id": 234,                # number``
+| ``"packet_second": 345,           # number``
+| ``"packet_microsecond": 456,      # number``
+| ``"linktype": 7,                  # number``
+| ``"packet_length": 890,           # number``
+| ``"packet_data": "AAAAb=="        # base64 string``
 | ``}``
 |
 | ``packet_data = "AAAAb=="             # base64 string``
