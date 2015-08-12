@@ -22,7 +22,7 @@ Call write_pcap with the following arguments:
 | ``list = [packet_1, packet_2, ... packet_n]``
 |  
 | ``packet_n = (snort_packet_descriptor, packet_data)``
-
+|
 | ``snort_packet_descriptor = {``
 | ``"sensor_id": 123,               # number``
 | ``"event_id": 234,                # number``
