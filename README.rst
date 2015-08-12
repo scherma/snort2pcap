@@ -34,3 +34,7 @@ Call write_pcap with the following arguments:
 | ``}``
 |
 | ``packet_data = "AAAAb=="             # base64 string``
+
+Result will be a file at fpath containing all the packets in the order they were provided.
+
+If you have multiple events and want them in separate files, make a list for each event and call write_pcap() for each list.
