@@ -24,8 +24,15 @@ def write_pcap(packets, fpath, **kwargs):
             f.write(hdr.header)
             for (pheader, pdata) in packets:
                 pdbin = pkt_data(pdata)
+                pcapbin = None
                 # need to prep data with dummy MAC and protocol type; snort events do not include this
-                pcapbin = b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x08\x00' + pdbin.data
+                if 'network' in kwargs:
+                    if kwargs.pop('network') == 1: pcapbin = pdbin.data
+                else: 
+                    if pdbin.data[12:14] != b'\x08\x00' and pdbin.data[0] == b'\x02':
+                        pcapbin = pdbin.data[:4] +  b'\x00\x00\x00\x00\x00\x00\x00\x00\x08\x00' + pdbin.data[4:]
+                    else: pcapbin = pdbin.data
+
                 phbin = pkt_hdr(pheader['packet_second'],pheader['packet_microsecond'],len(pcapbin),len(pcapbin))
                 f.write(phbin.header)
 
